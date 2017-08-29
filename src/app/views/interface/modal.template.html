@@ -1,0 +1,84 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Modal Window</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a>Interface</a>
+      </li>
+      <li class="active">
+        <strong>Modal Window</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Basic modal</h5>
+        </div>
+        <div class="ibox-content">
+          <p>
+            Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.
+          </p>
+          <p>
+            Creating custom modals is straightforward: create a partial view, its controller and reference them when using the service.
+          </p>
+          <div class="text-center">
+            <button class="btn btn-primary" (click)="open(template)">Launch demo modal</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Optional sizes</h5>
+        </div>
+        <div class="ibox-content">
+          <p>
+            Modals have two optional sizes, available via parameter to be placed on function <code>open('lg')</code>
+          </p>
+
+          <div class="text-center">
+            <button class="btn btn-primary" (click)="open1(template, 'lg')">Large Modal</button>
+            <button class="btn btn-primary" (click)="open1(template, 'sm')">Small Modal</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Events</h5>
+        </div>
+        <div class="ibox-content text-center">
+          <p>Modal service events. Modal service exposes 4 events: onShow, onShown, onHide, onHidden. See usage example below.</p>
+          <pre *ngFor="let message of messages">{{message}}</pre>
+          <button class="btn btn-primary" (click)="openModalEvent(template)">Modal Event</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>

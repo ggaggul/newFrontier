@@ -1,0 +1,346 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>상품 등록/조회</h2>
+		<ol class="breadcrumb">
+			<li>
+				<a href="index.html">Home</a>
+			</li>
+			<li>
+				<a>상품관리</a>
+			</li>
+			<li class="active">
+				<strong>상품 등록/조회</strong>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+
+	</div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>상품 등록
+					</h5>
+					<iboxtools></iboxtools>
+				</div>
+				<div class="ibox-content">
+					<form [formGroup]="productForm" class="form-horizontal" (ngSubmit)="onSubmit()" novalidate>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">상품번호</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" formControlName="prdNo">
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">판매자 상품코드</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" formControlName="selPrdCd">
+								<span class="help-block m-b-none">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">상품명</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" formControlName="prdNm">
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">브랜명</label>
+							<div class="col-sm-10">
+								<input type="text" placeholder="브랜드명" class="form-control" formControlName="brandNm">
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group">
+							<label class="col-lg-2 control-label">모델명</label>
+							<div class="col-lg-10">
+								<input type="text" placeholder="모델명을 입력하세요" class="form-control" formControlName="modelNm">
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group">
+							<label class="col-lg-2 control-label">등록일자</label>
+							<div class="col-lg-10">
+								<div class="input-group date">
+									<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+									<input type="text" date-picker data-date-format="yyyy/mm/dd" class="form-control" formControlName="createDate">
+								</div>
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group">
+							<label class="col-lg-2 control-label">카테고리</label>
+							<div class="col-lg-10">
+								<select class="form-control m-b" name="category" formControlName="categories">
+									<option *ngFor="let category of categories" [value]="category">{{category}}</option>
+								</select>
+							</div>
+						</div>
+						<!--<div class="hr-line-dashed"></div>
+						<div class="form-group"><label class="col-sm-2 control-label">Checkboxes and radios <br/>
+							<small class="text-navy">Normal Bootstrap elements</small>
+						</label>
+
+							<div class="col-sm-10">
+								<div><label> <input type="checkbox" value=""> Option one is this and that&mdash;be sure to include why it's great </label></div>
+								<div><label> <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> Option one is this and that&mdash;be sure to
+									include why it's great </label></div>
+								<div><label> <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Option two can be something else and selecting it will
+									deselect option one </label></div>
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group"><label class="col-sm-2 control-label">Inline checkboxes</label>
+							<div class="col-sm-10">
+								<label class="checkbox-inline">
+									<input type="checkbox" value="option1" id="inlineCheckbox1"> a </label>
+								<label class="checkbox-inline">
+									<input type="checkbox" value="option2" id="inlineCheckbox2"> b </label>
+								<label class="checkbox-inline">
+									<input type="checkbox" value="option3" id="inlineCheckbox3"> c </label>
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Checkboxes &amp; radios <br/>
+								<small class="text-navy">Custom elements</small>
+							</label>
+							<div class="col-sm-10">
+								<div class="i-checks">
+									<label>
+										<input icheck type="checkbox"> Option one
+									</label>
+								</div>
+
+								<div class="i-checks">
+									<label>
+										<input icheck type="checkbox" checked> Option two checked
+									</label>
+								</div>
+
+								<div class="i-checks">
+									<label>
+										<input icheck type="checkbox" checked disabled> Option three checked and disabled
+									</label>
+								</div>
+
+								<div class="i-checks">
+									<label>
+										<input icheck type="checkbox" disabled> Option four checked and disabled
+									</label>
+								</div>
+
+								<div class="i-checks">
+									<label>
+										<input icheck type="radio" name="a"> Option one
+									</label>
+								</div>
+
+								<div class="i-checks">
+									<label>
+										<input icheck type="radio" name="a"> Option two checked
+									</label>
+								</div>
+
+								<div class="i-checks">
+									<label>
+										<input icheck type="radio" checked disabled> Option three checked and disabled
+									</label>
+								</div>
+
+								<div class="i-checks">
+									<label>
+										<input icheck type="radio" disabled> Option four checked and disabled
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group"><label class="col-sm-2 control-label">Inline checkboxes</label>
+
+							<div class="col-sm-10">
+								<label class="checkbox-inline"> <input icheck type="checkbox"> a
+								</label>
+								<label class="checkbox-inline"> <input icheck type="checkbox"> b
+								</label>
+								<label class="checkbox-inline"> <input icheck type="checkbox"> c
+								</label></div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group"><label class="col-sm-2 control-label">Select</label>
+
+							<div class="col-sm-10"><select class="form-control m-b" name="account">
+								<option>option 1</option>
+								<option>option 2</option>
+								<option>option 3</option>
+								<option>option 4</option>
+							</select>
+
+								<div class="col-lg-4 m-l-n"><select class="form-control" multiple="">
+									<option>option 1</option>
+									<option>option 2</option>
+									<option>option 3</option>
+									<option>option 4</option>
+								</select></div>
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group has-success"><label class="col-sm-2 control-label">Input with
+							success</label>
+
+							<div class="col-sm-10"><input type="text" class="form-control"></div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group has-warning"><label class="col-sm-2 control-label">Input with
+							warning</label>
+
+							<div class="col-sm-10"><input type="text" class="form-control"></div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group has-error"><label class="col-sm-2 control-label">Input with error</label>
+
+							<div class="col-sm-10"><input type="text" class="form-control"></div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group"><label class="col-sm-2 control-label">Control sizing</label>
+
+							<div class="col-sm-10"><input type="text" placeholder=".input-lg"
+														  class="form-control input-lg m-b">
+								<input type="text" placeholder="Default input" class="form-control m-b"> <input
+										type="text" placeholder=".input-sm" class="form-control input-sm">
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group"><label class="col-sm-2 control-label">Column sizing</label>
+
+							<div class="col-sm-10">
+								<div class="row">
+									<div class="col-md-2"><input type="text" placeholder=".col-md-2"
+																 class="form-control"></div>
+									<div class="col-md-3"><input type="text" placeholder=".col-md-3"
+																 class="form-control"></div>
+									<div class="col-md-4"><input type="text" placeholder=".col-md-4"
+																 class="form-control"></div>
+								</div>
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group"><label class="col-sm-2 control-label">Input groups</label>
+
+							<div class="col-sm-10">
+								<div class="input-group m-b"><span class="input-group-addon">@</span> <input type="text"
+																											 placeholder="Username"
+																											 class="form-control">
+								</div>
+								<div class="input-group m-b"><input type="text" class="form-control"> <span
+										class="input-group-addon">.00</span></div>
+								<div class="input-group m-b"><span class="input-group-addon">$</span> <input type="text"
+																											 class="form-control">
+									<span class="input-group-addon">.00</span></div>
+								<div class="input-group m-b"><span class="input-group-addon"> <input
+										type="checkbox"> </span> <input type="text" class="form-control"></div>
+								<div class="input-group"><span class="input-group-addon"> <input type="radio"> </span>
+									<input type="text" class="form-control"></div>
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group"><label class="col-sm-2 control-label">Button addons</label>
+
+							<div class="col-sm-10">
+								<div class="input-group m-b"><span class="input-group-btn">
+                                            <button type="button" class="btn btn-primary">Go!</button> </span> <input
+										type="text" class="form-control">
+								</div>
+								<div class="input-group"><input type="text" class="form-control"> <span
+										class="input-group-btn"> <button type="button" class="btn btn-primary">Go!
+                                </button> </span></div>
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group"><label class="col-sm-2 control-label">With dropdowns</label>
+
+							<div class="col-sm-10">
+								<div class="input-group m-b">
+									<div class="input-group-btn" uib-dropdown>
+										<button class="btn btn-white" uib-dropdown-toggle type="button">
+											Action <span class="caret"></span></button>
+										<ul uib-dropdown-menu>
+											<li><a href="">Action</a></li>
+											<li><a href="">Another action</a></li>
+											<li><a href="">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="">Separated link</a></li>
+										</ul>
+									</div>
+									<input type="text" class="form-control"></div>
+								<div class="input-group"><input type="text" class="form-control">
+
+									<div class="input-group-btn" uib-dropdown>
+										<button class="btn btn-white" uib-dropdown-toggle type="button">
+											Action <span class="caret"></span></button>
+										<ul class="pull-right" uib-dropdown-menu="">
+											<li><a href="">Action</a></li>
+											<li><a href="">Another action</a></li>
+											<li><a href="">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="">Separated link</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group"><label class="col-sm-2 control-label">Segmented</label>
+
+							<div class="col-sm-10">
+								<div class="input-group m-b">
+									<div class="input-group-btn" uib-dropdown>
+										<button tabindex="-1" class="btn btn-white" type="button">Action</button>
+										<button class="btn btn-white" uib-dropdown-toggle type="button">
+											<span class="caret"></span></button>
+										<ul uib-dropdown-menu>
+											<li><a href="">Action</a></li>
+											<li><a href="">Another action</a></li>
+											<li><a href="">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="">Separated link</a></li>
+										</ul>
+									</div>
+									<input type="text" class="form-control"></div>
+								<div class="input-group"><input type="text" class="form-control">
+
+
+									<div class="input-group-btn" uib-dropdown>
+										<button tabindex="-1" class="btn btn-white" type="button">Action</button>
+										<button class="btn btn-white" uib-dropdown-toggle type="button">
+											<span class="caret"></span></button>
+										<ul class="pull-right" uib-dropdown-menu>
+											<li><a href="">Action</a></li>
+											<li><a href="">Another action</a></li>
+											<li><a href="">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="">Separated link</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>-->
+						<div class="hr-line-dashed"></div>
+						<div class="form-group">
+							<div class="col-sm-4 col-sm-offset-2">
+								<button class="btn btn-white" type="submit">Cancel</button>
+								<button class="btn btn-primary" type="submit">Save changes</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

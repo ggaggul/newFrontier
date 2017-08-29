@@ -1,0 +1,177 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Extend Form</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a>Forms</a>
+      </li>
+      <li class="active">
+        <strong>Extend Form</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Extend Form
+          </h5>
+        </div>
+        <div class="ibox-content">
+          <div summernote class="summernote">
+            <h3>달력 컴포넌트는 bootstrap-picker를 사용하며, 보다 자세한 내용은 홈페이지의 가이드를 참고한다.</h3>
+            <dl>
+              <dt>bootstrap-picker</dt>
+              <dd>- version : ~1.7.1</dd>
+              <dd>
+                - url : <a href="https://github.com/uxsolutions/bootstrap-datepicker" target="_blank">https://github.com/uxsolutions/bootstrap-datepicker</a>
+              </dd>
+            </dl>
+
+            <h3>TouchSpin은 입력 수치의 증감을 보다 편리하게 관리해주는 컴포넌트로, 보다 자세한 내용은 홈페이지의 가이드를 참고한다.  </h3>
+            <dl>
+              <dt>bootstrap-touchspin</dt>
+              <dd>- version : ~3.1.1</dd>
+              <dd>
+                - url : <a href="http://www.virtuosoft.eu/code/bootstrap-touchspin/" target="_blank">http://www.virtuosoft.eu/code/bootstrap-touchspin/</a>
+              </dd>
+            </dl>
+
+            <h3>TagsInput은 태그 입력을 보다 편리하게 관리해주는 컴포넌트로, 보다 자세한 내용은 홈페이지의 가이드를 참고한다.</h3>
+            <dl>
+              <dt>bootstrap-tagsinput</dt>
+              <dd>- version : ~0.7.1</dd>
+              <dd>
+                - url : <a href="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/" target="_blank">https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/</a>
+              </dd>
+            </dl>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="ibox">
+            <div class="ibox-title">
+              <h5>Tags input</h5>
+              <iboxtools></iboxtools>
+            </div>
+            <div class="ibox-content">
+              <p>
+                jQuery plugin providing a Twitter Bootstrap user interface for managing tags
+              </p>
+
+              <p class="font-bold">
+                Basic example with few initial tags
+              </p>
+
+              <input class="form-control" tags-input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="ibox">
+            <div class="ibox-title">
+              <h5>Bootstrap TouchSpin</h5>
+              <iboxtools></iboxtools>
+            </div>
+            <div class="ibox-content">
+              <div>
+                <h5>Basci example</h5>
+                <input id="demo1" type="text" name="demo1" touch-spin [options]="spinOption1" >
+              </div>
+
+              <div class="m-t-md">
+                <h5>Vertical button alignment</h5>
+                <input id="demo2" type="text" name="demo1" touch-spin [options]="spinOption2">
+              </div>
+
+              <div class="m-t-md">
+                <h5>Example with postfix</h5>
+                <input id="demo3" type="text" name="demo1" touch-spin [options]="spinOption3">
+              </div>
+
+              <div class="m-t-md">
+                <h5>Basci with button postfix</h5>
+                <input id="demo4" type="text" name="demo1" touch-spin [options]="spinOption4">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Date Picker
+            <small><a href="https://uxsolutions.github.io/bootstrap-datepicker/?markup=input&format=&weekStart=&startDate=&endDate=&startView=0&minViewMode=0&maxViewMode=4&todayBtn=false&clearBtn=false&language=en&orientation=auto&multidate=&multidateSeparator=&keyboardNavigation=on&forceParse=on#sandbox">bootstrap-datepipcker</a></small>
+          </h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+          <h3>Data picker</h3>
+          <p>Simple and easy select a time for a text input using your mouse.</p>
+
+          <div class="form-group" id="data_1">
+            <label class="font-normal">Simple data input format</label>
+            <div class="input-group date">
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+              <input date-picker type="text" class="form-control" value="2017/03/01">
+            </div>
+          </div>
+
+          <div class="form-group" id="data_2">
+            <label class="font-normal">One Year view</label>
+            <div class="input-group date">
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+              <input date-picker [startView]="3" type="text" class="form-control" value="2017/09/01">
+            </div>
+          </div>
+
+          <div class="form-group" id="data_3">
+            <label class="font-normal">Decade view</label>
+            <div class="input-group date">
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+              <input date-picker [startView]="2" type="text" class="form-control" value="2017/08/01">
+            </div>
+          </div>
+
+          <div class="form-group" id="data_4">
+            <label class="font-normal">Month select</label>
+            <div class="input-group date">
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+              <input date-picker [startView]="1" type="text" class="form-control" value="2017/08/01">
+            </div>
+          </div>
+
+          <div class="form-group" id="data_5">
+            <label class="font-normal">Range select</label>
+            <div class="input-daterange input-group" id="datepicker">
+              <input type="text" date-picker class="input-sm form-control" name="start" value="2017/03/01">
+              <span class="input-group-addon">to</span>
+              <input type="text" date-picker class="input-sm form-control" name="end" value="2017/03/11">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

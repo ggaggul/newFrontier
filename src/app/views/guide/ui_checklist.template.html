@@ -1,0 +1,809 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>UI Checklist</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a>Guide</a>
+      </li>
+      <li class="active">
+        <strong>UI Checklist</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+
+  <div class="col-lg-12 page-desc">
+    <h5>
+        본 문서는 Frontier의 UI 체크리스트로, 분석/설계자, 개발자, 아키텍트는 View Layer 개발시 본 가이드를 참조하여 개발표준을 준수한다.
+    </h5>
+  </div>
+
+</div>
+
+<div class="wrapper wrapper-content animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>공통</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+            <p>웹 화면에 공통으로 적용되는 UI 체크리스트로, 개발 시 하기의 표준을 따른다.</p>
+
+            <div class="table-responsive">
+                <table class="table table-bordered">
+
+                    <thead>
+                    <tr>
+                        <th><i class="fa fa-check-square-o"></i></th>
+                        <th>점검항목</th>
+                        <th>상세내용</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.common2"></td>
+                        <td>값 정렬</td>
+                        <td>
+                            다음의 내용을 따름
+                            <ul>
+                                <li>상세 화면(입력/조회)의 숫자(컬럼명에 단위가 표시될 경우 포함) : 좌측</li>
+                                <li>목록 화면의 숫자(컬럼명에 단위가 표시될 경우 포함) : 우측</li>
+                                <li>주민등록번호, 날짜 등 길이가 고정된 항목 : 중앙</li>
+                                <li>긴 내용 : 좌측</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.common3"></td>
+                        <td>데이터 값 없을 시 null 표시</td>
+                        <td>데이터 값이 없는 경우 null를 표시하지 않도록 처리</td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.common1"></td>
+                        <td>ToolTip 적용</td>
+                        <td>
+                            다음의 내용을 따름
+                            <ul>
+                                <li>중요 아이콘과 정보에 Tooltip(풍선도움말) 적용</li>
+                                <li>상세 내용이 없는 목록에서 줄바꿈으로도 모든 내용을 표시할 수 없는 경우 ... 으로 표시하고, Tooltip에 모든 내용을 표시</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.common4"></td>
+                        <td>다국어 화면 레이아웃</td>
+                        <td>
+                            다음의 내용을 따름
+                            <ul>
+                                <li>다국어 적용시 텍스트 넓이가 확장되는 경우를 대비한 레이아웃 고려</li>
+                                <li>다국어 적용시 큰 폰트를 필요로 하는 언어로 인해 높이 확장 고려</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.common5"></td>
+                        <td>Label</td>
+                        <td>
+                            <ul>
+                                <li>Label은 모두 다국어로 표현</li>
+                                <li>두가지 이상의 내용과 관련된 Label(예를들어, 검색 조건값에 제목 또는 작성자를 입력하여 조회할 경우)은 "내용"을 사용하거나, Label을 표시하지 않음 </li>
+                            </ul>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.common6"></td>
+                        <td>Placeholder</td>
+                        <td>
+                            다음의 내용을 따름
+                            <ul>
+                                <li>두가지 이상의 내용을 입력해야 하는 상황(예를들어, 검색 조건값에 제목 또는 작성자를 입력하여 조회할 경우)에서는 Placeholder 속성 사용</li>
+                                <li>Placeholder의 내용은 "/" 를 구분으로 관련된 단어를 나열</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.common7"></td>
+                        <td>단위표기</td>
+                        <td>상세입력에서 단위는 label이 아니라 입력항목 뒤에 위치, 리스트영역에서는 목록 타이틀에 위치</td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.common8"></td>
+                        <td>마스킹 처리</td>
+                        <td>금액, 수량 등을 보여줄 때 자릿수 구분자(,)를 세자리마다 사용</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>셀렉트</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+            <p>셀렉트(Select)에 대한 UI 체크리스트로, 개발 시 하기의 표준을 따른다.</p>
+
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th><i class="fa fa-check-square-o"></i></th>
+                        <th>점검항목</th>
+                        <th>상세내용</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.selectChecked1"></td>
+                        <td>조회 영역 - 셀렉트에 '--선택--' 항목 존재 <small>(필수 조회 조건)</small></td>
+                        <td>조회 영역에서 "--선택--" 항목이 존재할 경우, 처음 로딩시 첫번째 항목을 선택</td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.selectChecked2"></td>
+                        <td>조회 영역 - 셀렉트에 '--선택--' 항목 선택 후 조회</td>
+                        <td>
+                            다음의 내용을 따름
+                            <ul>
+                                <li>Validation 메시지를 보여주고 조회 불가</li>
+                                <li>validation 메시지에서 사용되는 용어 화면 항목명과 일치</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.selectChecked3"></td>
+                        <td>'--선택--' 항목 존재</td>
+                        <td>처음 로딩시 다른 항목이 선택되더라도, '--선택--' 항목은 존재</td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.selectChecked4"></td>
+                        <td>셀렉트 필수 항목 명칭</td>
+                        <td>'--선택--'(또는 --전체)</td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.selectChecked5"></td>
+                        <td>연관 셀렉트 상위 항목 선택</td>
+                        <td>상위 항목 선택시 하위 셀렉트는 '--선택--'(또는 --전체) 항목을 선택</td>
+                    </tr>
+                    <tr>
+                        <td><input icheck type="checkbox" ng-model="checklist.selectChecked"></td>
+                        <td>셀렉트 사이즈</td>
+                        <td>항목 글자 모두 표시(한글기준)되는지 확인. 단, 아래의 경우 예외 처리
+                            <ul>
+                                <li>셀렉트가 화면에서 더 이상 늘어날 수 없을 때</li>
+                                <li>1~2개의 항목이 상대적으로 너무 긴 경우</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>버튼</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>버튼(Button, a)에 대한 UI 체크리스트로, 개발 시 하기의 표준을 따른다.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><i class="fa fa-check-square-o"></i></th>
+                                <th>점검항목</th>
+                                <th>상세내용</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.buttonChecked1"></td>
+                                <td>버튼 권한</td>
+                                <td>
+                                    버튼 권한에 따른 버튼의 스타일은 다음의 내용을 따름
+                                    <ul>
+                                        <li>사용자 권한이 없는 버튼은 Hide</li>
+                                        <li>사용자 권한이 있지만 사용이 불가한 경우 Disabled 적용</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.buttonChecked2"></td>
+                                <td>제약사항</td>
+                                <td>
+                                    초기화 버튼, 수정 버튼(업무에 따라 예외가능), 팝업창 내 닫기 버튼 사용하지 않음
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>탭</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>탭(Tab)에 대한 UI 체크리스트로, 개발 시 하기의 표준을 따른다.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><i class="fa fa-check-square-o"></i></th>
+                                <th>점검항목</th>
+                                <th>상세내용</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.tabChecked1"></td>
+                                <td>탭 배치 순서</td>
+                                <td>
+                                    가장 중요하고 선택빈도가 높은 탭, 또는 업무순서 상 첫 번째인 탭을 맨 좌측(또는 맨 위)에 배치하고 default로 활성화
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.tabChecked2"></td>
+                                <td>탭 구성</td>
+                                <td>
+                                    탭의 폭은 탭의 개수와 레이블 길이에 따라 달라지며, 탭의 레이블은 텍스트 및 폰트 아이콘으로 작성하고, 각 탭의 레이블은 중앙 정렬
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.tabChecked3"></td>
+                                <td>다중 탭 구성</td>
+                                <td>
+                                    탭의 개수가 많아 한줄에 해당 화면영역에 표시되지 못할 경우 여러줄로 표시되거나, 스크롤이 생겨 찾을 수 없는 탭이 없도록 처리
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>메세지(용어, 문장)</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>화면에서 사용되는 메세지에 대한 UI 체크리스트로, 개발 시 하기의 표준을 따른다.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><i class="fa fa-check-square-o"></i></th>
+                                <th>점검항목</th>
+                                <th>상세내용</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.messageChecked1"></td>
+                                <td>아이디, 명 표현</td>
+                                <td>
+                                    화면에 아이디와 명이 공존하는 경우에는 아이디, 명을 명확히 표현(단, '명'이 없어도 통상적으로 쓰이는것은 제외)
+                                    <ul>
+                                        <li>사용자아이디, 사용자 (X) > 사용자아이디, 사용자명 (O)</li>
+                                        <li>빌딩층(O), 빌딩층명(X)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.messageChecked2"></td>
+                                <td>용어 붙여쓰기</td>
+                                <td>
+                                    용어(메뉴명, 타이블, 서브타이틀 등등)는 공백없이 모두 붙여서 작성
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.messageChecked3"></td>
+                                <td>문장, 용어 함께 사용 금지</td>
+                                <td>
+                                    용어와 문장을 함께 붙여서 사용하는 것은 다국어 적용시 문장 문법이 문제가 되므로 금지하며, 별도로 문장에 변수를 등록하여 사용
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.messageChecked4"></td>
+                                <td>용어명칭 통일</td>
+                                <td>
+                                    조회조건, 조회결과목록, 상세(신규) 화면에 있는 동일 용어의 명칭은 일치
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.messageChecked5"></td>
+                                <td>다국어 등록 확인</td>
+                                <td>
+                                    용어가 등록되지 않아 [No Message Definded]로 처리하지 않음
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.messageChecked6"></td>
+                                <td>사용여부 용어</td>
+                                <td>
+                                    사용여부 용어는 '사용', '사용안함'으로 통일('예','아니오', 'Y', 'N' 등 사용금지)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.messageChecked7"></td>
+                                <td>일자 용어</td>
+                                <td>
+                                    '일자' 라는 명칭이 아닌, 업무명을 정확히 기입한 '00일자'로 표현
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>날짜 및 시간</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>날짜 및 시간(DatetimePicker)에 대한 UI 체크리스트로, 개발 시 하기의 표준을 따른다.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><i class="fa fa-check-square-o"></i></th>
+                                <th>점검항목</th>
+                                <th>상세내용</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.datetimeChecked1"></td>
+                                <td>날짜 및 시간 기본 포맷</td>
+                                <td>
+                                    YYYY-MM-DD hh:mm (2015-05-12 14:39)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.datetimeChecked2"></td>
+                                <td>날짜 및 시간 입력</td>
+                                <td>
+                                    날짜 및 시간 입력은 DatetimePicker를 선택하여 입력, 텍스트 입력 금지
+                                    (단, 업무 특성에 따라 꼭 필요한 경우 입력 허용하고, 입력 불가한 일자 및 시간 형식을 체크하고, 각 DB별 처리 불가한 일자 추가 점검필요)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.datetimeChecked3"></td>
+                                <td>기간 체크</td>
+                                <td>
+                                    기간 오류 메시지 처리 : '(이)가 유효하지 않습니다'
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>목록(List Pattern)</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>목록(List Pattern)에 대한 UI 체크리스트로, 개발 시 하기의 표준을 따른다.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><i class="fa fa-check-square-o"></i></th>
+                                <th>점검항목</th>
+                                <th>상세내용</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern0"></td>
+                                <td>목록 공통</td>
+                                <td>
+                                    목록의 공통 내용으로 아래의 조건을 따름
+                                    <ul>
+                                        <li>목록에 순번, 번호 항목 미표시 (단, 업무적으로 꼭 필요한 경우 유지)</li>
+                                        <li>조회조건에 존재하는 항목은 조회결과 목록에도 표시(단, 조건이 필수이고, 화면에 항목이 너무 많아 좌우스크롤이 생기는 경우는 예외로 처리)</li>
+                                        <li>상세가 있는 경우 조회결과 목록에 있는 항목은 상세에 모두 표시</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern1"></td>
+                                <td>잘못된 조회조건 검증 후 처리</td>
+                                <td>조회조건 잘못 입력시 validation 메시지 이후 조회조건 값을 초기화 하지 않음</td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern2"></td>
+                                <td>조회 영역의 텍스트 상자(Input type="text") 엔터 기능</td>
+                                <td>
+                                    조회 영역에 텍스트 상자가 있는 경우에는 엔터키를 클릭시에 조회 처리하지 않음
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern3"></td>
+                                <td>조회 영역 텍스트 상자</td>
+                                <td>텍스트의 데이터를 찾는 경우에는 like 검색이 기본이며, 값 앞뒤% 를 사용
+                                    (단, 업무 성격에 따라 like 검색을 불허하는 경우 예외)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern4"></td>
+                                <td>목록 영역 페이징 셀렉트</td>
+                                <td>목록 영역을 페이징 처리 할 경우 페이지당 건수 셀렉트 표시</td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern5"></td>
+                                <td>목록 영역 포커스</td>
+                                <td>조회 후 첫번째 행 선택(포커스). 페이징 목록에서는 1페이지 1행으로 포커스</td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern6"></td>
+                                <td>목록 데이터 없을시 표시</td>
+                                <td>조회 시 목록 결과없는 경우, 다음의 내용을 따름
+                                    <ul>
+                                        <li>일관된 메시지 표시</li>
+                                        <li>페이징 목록일 경우, 페이지 네비게이션 정보 표시하지 않음</li>
+                                        <li>상세 영역의 입력 폼은 표출 & Clear</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern7"></td>
+                                <td>목록 테이블 열 넓이</td>
+                                <td>
+                                    테이블 열 넓이는 기본적으로 지정하고, 가장 내용이 많거나 중요한 행을 Auto로 지정하되
+                                    내용이 길어서 모두 표시가 되지 않을 경우 아래의 조건을 따름
+                                    <ul>
+                                        <li>하단 등 상세 내용이 있는 경우 : ... 으로 표시</li>
+                                        <li>상세 내용 없는 목록일 경우 : 줄바꿈으로 모든 내용을 표시</li>
+                                        <li>상세 내용이 없는 목록에서 줄바꿈으로도 모든 내용을 표시할 수 없는 경우 ... 으로 표시하고, Tooltip에 모든 내용을 표시</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern8"></td>
+                                <td>목록 조회</td>
+                                <td>
+                                    목록 조회시 아래의 조건을 따름
+                                    <ul>
+                                        <li>조회 조건을 변경하여 조회 버튼 클릭 후 페이지 이동시 조회조건은 그대로 유지</li>
+                                        <li>조회 후, 조회 조건 변경 뒤 목록 페이지이동, 페이징 셀렉트 등의 조회가 아닌 다른 동작 시 새로운 조건으로 조회 되지 않고 기존 조회 조건의 해당 페이지 목록 표시(조회 기능은 조회 버튼을 통해서만 가능)
+                                            <ul><li>페이지 이동 후, 조회 조건은 변경 전 값으로 복원</li></ul>
+                                        </li>
+                                        <li>페이징 셀렉트 변경 뒤 조회 버튼 클릭 시, 1 페이지로 조회되며 페이징 셀렉트 값 유지</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern9"></td>
+                                <td>목록 마우스 이벤트</td>
+                                <td>
+                                    목록에서 마우스 이벤트 발생시 아래의 조건을 따름
+                                    <ul>
+                                        <li>테이블 행에서 마우스 오버시 마우스 포커싱된 행은 색상 반전</li>
+                                        <li>테이블 행에서 마우스 오버시 마우스 포인터는 손가락 모양 표시</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern10"></td>
+                                <td>목록 체크박스</td>
+                                <td>
+                                    목록에 체크박스가 존재할 경우 아래의 조건을 따름
+                                    <ul>
+                                        <li>열 헤더를 체크박스로 하고 선택시 일괄 전체 선택되며, 체크 해제 할 경우 전체 해제</li>
+                                        <li>
+                                            행 클릭시 각 행의 체크박스가 체크/해제되도록 처리. 단, 다음의 경우는 행이 아니라 체크박스 자체를 선택시 선택 처리
+                                            <ul>
+                                                <li>동일 행에 다른 이벤트( <예>상세정보조회 )가 있는 경우</li>
+                                                <li>동일 행에 다른 폼 요소가 있어서 클릭 이벤트가 전파되는 경우</li>
+                                            </ul>
+                                        </li>
+                                        <li>열 헤더의 전체선택 기능이 체크된 이후 다른 액션(페이지 이동, 조회 등)이 발생한 경우, 목록의 개별 체크박스와 전체선택 체크박스도 해제</li>
+                                        <li>열 헤더의 전체선택 기능이 있을 경우, 목록 전체를 개별 선택해도 전체선택에 체크가 표시되어야 하며, 전체선택 후 개별로 한건을 선택해지 시, 전체선택의 체크도 해제</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>상세(Detail Pattern)</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>상세(Detail Pattern)에 대한 UI 체크리스트로, 개발 시 하기의 표준을 따른다.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><i class="fa fa-check-square-o"></i></th>
+                                <th>점검항목</th>
+                                <th>상세내용</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.detailPattern0"></td>
+                                <td>입력 항목 - 공통</td>
+                                <td>
+                                    입력 항목 아래의 조건을 따름
+                                    <ul>
+                                        <li>필수 입력 항목은 필수 표시(*) 이후에 1칸 띄우고 label 텍스트를 표기</li>
+                                        <li>탭키 클릭시 항목간의 탭 이동 순서가 적절(위-->아래, 좌-->우로 진행)한지 확인</li>
+                                        <li>입력 제한 수 초과 처리 시, 아래의 조건을 따름
+                                            <ul>
+                                                <li>input box : maxlengh를 사용하여 입력 제한</li>
+                                                <li>textarea : maxlengh를 사용해서 입력 제한</li>
+                                                <li>사용자에게 Notification을 통해 최대 입력 자릿수 안내</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.detailPattern1"></td>
+                                <td>입력항목 - 셀렉트</td>
+                                <td>셀렉트 항목의 초기값은 아래의 조건을 따름
+                                    <ul>
+                                        <li>사용여부는 '사용'을 선택</li>
+                                        <li>긍정, 부정의 내용이 존재할경우 긍정 항목을 선택</li>
+                                        <li>우선순위가 있을 경우, 우선순위가 높은 항목 선택</li>
+                                        <li>상기 조건중, 업무의 따라서 특정 항목이 선택되어야 하는 경우는 예외</li>
+                                        <li>그외 콤보박스는 기본 '--선택--'을 선택</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.detailPattern2"></td>
+                                <td>입력항목 - 숫자</td>
+                                <td>숫자 항목은 아래의 조건을 따름
+                                    <ul>
+                                        <li>숫자 입력 항목에 영문, 한글 입력 금지</li>
+                                        <li>소수나 음수 허용 필드 외 양수만 입력 가능</li>
+                                        <li>특정 패턴이 필요한 경우 마스킹 적용</li>
+                                        <li>사용자에게 입력받은 형태로 내부적인 규칙에 의해 다른 형태로 저장되는 경우는 가이드 제시
+                                            (ex 소수점 3째자리 이하가 입력되지만, 저장 실행 후 소수점 3째 자리 이하 자동 반올림되는 경우는 가이드 필요)</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.detailPattern3"></td>
+                                <td>입력항목 - 파일</td>
+                                <td>파일첨부시 다음의 경우 validation 메시지 표시
+                                    <ul>
+                                        <li>최대크기 이상, 최소길이 이하의 파일 첨부 시</li>
+                                        <li>파일 첨부에 텍스트가 입력 시</li>
+                                        <li>미지원 형식 파일 첨부 시</li>
+                                        <li>파일 개수 초과 시</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.detailPattern4"></td>
+                                <td>수정 불가 항목</td>
+                                <td>
+                                    저장된 정보를 조회하는 상세조회 화면 또는 저장된 정보를 불러와서 일부를 수정하는 수정화면 등에서 수정불가한 항목은
+                                    텍스트로 처리(단, 수정이 가능/불가능으로 변경가능한 경우 disabled로 처리)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.detailPattern5"></td>
+                                <td>입력 불가 항목</td>
+                                <td>
+                                    신규 정보 또는 조회조건 입력 항목 등, 직접 입력하지 않고 찾기 버튼과 같이 데이터를 가져오는 경우
+                                    입력필드는 read-only 처리(단, 업무 특성에 따라 꼭 필요한 경우 입력 허용)
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>저장</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>저장에 대한 UI 체크리스트로, 개발 시 하기의 표준을 따른다.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><i class="fa fa-check-square-o"></i></th>
+                                <th>점검항목</th>
+                                <th>상세내용</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.savePattern1"></td>
+                                <td>오류 항목 포커스</td>
+                                <td>
+                                    항목 입력 오류시 해당 항목으로 포커스 위치(단, Multi 오류 체크시는 Focus 기능 적용 안함)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.savePattern2"></td>
+                                <td>필수입력 항목 체크순서</td>
+                                <td>필수입력 항목 체크시 순서는 위-->아래, 좌-->우로 진행</td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.savePattern3"></td>
+                                <td>항목체크 메시지명</td>
+                                <td>
+                                    화면 항목명 = validation 메시지의 항목명 일치
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.savePattern4"></td>
+                                <td>Confirm 메시지</td>
+                                <td>저장 사용자 요청시 아래의 조건을 따름
+                                    <ul>
+                                        <li>저장 시 '저장 진행하시겠습니까?' Confirm Alert</li>
+                                        <li>저장 후 '저장 성공하였습니다.' Alert</li>
+                                        <li>진행 순서는 validation > Confirm > 처리결과 Alert</li>
+                                        <li>* 메시지내용 특별하지 않는 경우를 제외하고 통일 권장</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.savePattern5"></td>
+                                <td>Confirm 메시지 취소</td>
+                                <td>Confirm 메시지에서 취소 클릭시 현재 상태 그대로 유지, 입력한 내용 등이 초기화 되지 않도록 처리</td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.savePattern6"></td>
+                                <td>신규 저장 후 목록 포커스</td>
+                                <td>신규 저장 후 목록의 포커스는 1페이지 1행에 위치, 상세도 해당건 조회
+                                    (예) 2페이지에서 신규로 저장시 1페이지 1행에 포커스 위치)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.savePattern7"></td>
+                                <td>수정 후 목록 포커스</td>
+                                <td>수정 이후 기존 페이지의 행 포커스 및 상세보기</td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.listPattern8"></td>
+                                <td>저장 이후 검색조건 유지</td>
+                                <td>신규 및 수정에서 기존 검색조건 유지, 없어지거나 검색조건이 변경되지 않도록 처리</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>삭제</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>삭제에 대한 UI 체크리스트로, 개발 시 하기의 표준을 따른다.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><i class="fa fa-check-square-o"></i></th>
+                                <th>점검항목</th>
+                                <th>상세내용</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.deletePattern1"></td>
+                                <td>목록 멀티 삭제</td>
+                                <td>목록에서 선택하여 삭제할 경우 순서는, validation > Confirm</td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.deletePattern2"></td>
+                                <td>Confirm 메시지</td>
+                                <td>삭제 사용자 요청시 아래의 조건을 따름
+                                    <ul>
+                                        <li>삭제 시 '삭제 진행하시겠습니까?' Confirm Alert</li>
+                                        <li>삭제 후 '삭제 성공하였습니다.' Alert</li>
+                                        <li>* 메시지내용 특별하지 않는 경우를 제외하고 통일 권장</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.deletePattern3"></td>
+                                <td>Confirm 메시지 취소</td>
+                                <td>Confirm 메시지에서 취소 클릭시 현재 상태 그대로 유지</td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.deletePattern4"></td>
+                                <td>하위 데이터 존재</td>
+                                <td>하위 데이터가 있는 경우 validation 메시지('이미 사용중인 데이터이므로 삭제할 수 없습니다') Alert</td>
+                            </tr>
+                            <tr>
+                                <td><input icheck type="checkbox" ng-model="checklist.deletePattern5"></td>
+                                <td>삭제 후 목록 포커스</td>
+                                <td>삭제 이후 아래의 조건을 따름
+                                    <ul>
+                                        <li>목록의 첫번째 행에 포커스 및 상세보기</li>
+                                        <li>마지막 페이지에 1건이 남은 경우 삭제시 이전 페이지의 첫번째 행에 포커스가 위치</li>
+                                        <li>페이징 목록일 경우, 페이지 네비게이션 정보 표시하지 않음</li>
+                                        <li>상세 영역의 입력 폼은 표출 & Clear</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

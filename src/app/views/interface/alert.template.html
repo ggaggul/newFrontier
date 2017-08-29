@@ -1,0 +1,107 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Alert</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a>Interface</a>
+      </li>
+      <li class="active">
+        <strong>Alert</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Sweet Alert</h5>
+        </div>
+        <div class="ibox-content">
+          <strong>An awesome replacement for JavaScript's alert.</strong>
+
+          <p>
+              window.alert 대신 SweetAlert를 사용하여 경고 메세지를 화면에 노출한다.
+            <a href="http://t4t5.github.io/sweetalert/" target="_blank">https://limonte.github.io/sweetalert2/</a>
+          </p>
+
+          <div class="row text-center">
+
+            <div class="col-lg-6 h-100 p-lg">
+              <p>A basic sweetalert message</p>
+              <button class="btn btn-primary btn-sm" (click)="demo1()">Run example</button>
+            </div>
+            <div class="col-lg-6 h-100 p-lg">
+              <p> A success message! </p>
+              <button class="btn btn-success btn-sm" (click)="demo2()">Run example</button>
+            </div>
+            <div class="col-lg-6 h-100 p-lg">
+              <p>A warning message, with a function attached to the "Confirm"-button...</p>
+              <button class="btn btn-warning btn-sm" (click)="demo3()">Run example</button>
+            </div>
+            <div class="col-lg-6 h-100 p-lg">
+              <p> ... and by passing a parameter, you can execute something else for "Cancel". </p>
+              <button class="btn btn-danger btn-sm" (click)="demo4()">Run example</button>
+            </div>
+
+              <div class="col-lg-6 h-100 p-lg">
+                  <p>Ajax request example</p>
+                  <button class="btn btn-primary btn-sm" (click)="demo5()">Run example</button>
+              </div>
+
+              <div class="col-lg-6 h-100 p-lg">
+                  <p>Dynamic Queue example</p>
+                  <button class="btn btn-primary btn-sm" (click)="demo6()">Run example</button>
+              </div>
+
+          </div>
+          <div class="m-t-md">
+            <p>
+              You can easy add sweet alert in your script:
+            </p>
+            <pre>
+swal({{'{'}}
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!',
+  cancelButtonText: 'No, cancel!',
+  confirmButtonClass: 'btn btn-success',
+  cancelButtonClass: 'btn btn-danger',
+  buttonsStyling: false
+{{'}'}}).then(function () {{'{'}}
+  swal(
+    'Deleted!',
+    'Your file has been deleted.',
+    'success'
+  )
+{{'}'}}, function (dismiss) {{'{'}}
+  // dismiss can be 'cancel', 'overlay',
+  // 'close', and 'timer'
+  if (dismiss === 'cancel') {{'{'}}
+    swal(
+      'Cancelled',
+      'Your imaginary file is safe :)',
+      'error'
+    )
+  {{'}'}}
+{{'}'}})</pre>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

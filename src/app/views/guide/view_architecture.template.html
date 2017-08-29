@@ -1,0 +1,108 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>View Layer Architecture</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a>Guide</a>
+      </li>
+      <li class="active">
+        <strong>View Layer Architecture</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+
+  <div class="col-lg-12 page-desc">
+    <h5>
+        본 문서는 Frontier의 뷰레이어 아키텍처에 대한 가이드로, 분석/설계자, 개발자, 아키텍트는 View Layer 개발시 본 가이드를 참조하여 개발표준을 준수한다
+    </h5>
+  </div>
+
+</div>
+
+<div class="wrapper wrapper-content animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>서비스 뷰레이어</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+            <ul class="none-mark-list">
+                <li><i class="fa fa-globe"></i> dist : 운영 소스 배포 디렉토리</li>
+                <li><i class="fa fa-globe"></i> node_modules : 뷰레이어 빌더 라이브러리 디렉토리</li>
+                <li><i class="fa fa-globe"></i> src : 홈디렉토리
+                    <ul>
+                        <li><i class="fa fa-folder-open"></i> app : app root 디렉토리
+                            <ul>
+                                <li><i class="fa fa-folder-open"></i> components : app에서 공통으로 사용하는 open source ui component 및 navigation 정의 디렉토리
+                                    <ul>
+                                        <li><i class="fa fa-folder-open"></i> charts : chart component 디렉토리</li>
+                                        <li><i class="fa fa-folder-open"></i> common : navigation(sidebar, topnavi, footer) 디렉토리 </li>
+                                        <li><i class="fa fa-folder-open"></i> datepicket : datepicker component 디렉토리</li>
+                                        <li><i class="fa fa-folder-open"></i> grid : grid component 디렉토리</li>
+                                        <li><i class="fa fa-folder-open"></i> iboxtools : iboxtools component 디렉토리</li>
+                                        <li><i class="fa fa-folder-open"></i> icheck : checkbox component 디렉토리</li>
+                                        <li><i class="fa fa-folder-open"></i> map : map component 디렉토리</li>
+                                    </ul>
+                                </li>
+                                <li><i class="fa fa-folder-open"></i> services : angular service 디렉토리
+                                    <ul>
+                                        <li><i class="fa fa-folder-open"></i> templates : template 메뉴 관련 서비스 디렉토리</li>
+                                    </ul>
+                                </li>
+                                <li><i class="fa fa-folder-open"></i> shared : angular ui component share module 디렉토리
+                                </li>
+                                <li><i class="fa fa-folder-open"></i> views : 메뉴 화면 디렉토리
+                                    <ul>
+                                        <li><i class="fa fa-folder-open"></i> dashboard : dashboard template 디렉토리</li>
+                                        <li><i class="fa fa-folder-open"></i> forms : common form ui 렉토리</li>
+                                        <li><i class="fa fa-folder-open"></i> guide : frontier guide 디렉토리</li>
+                                        <li><i class="fa fa-folder-open"></i> tables : table & grid ui 디렉토리</li>
+                                        <li><i class="fa fa-folder-open"></i> template : CRUD Sample 디렉토리</li>
+                                    </ul>
+                                </li>
+                                <li><i class="fa fa-file-o"></i> app.component.ts : app main component 파일</li>
+                                <li><i class="fa fa-file-o"></i> app.helpers.ts : app helper(유틸성) 파일</li>
+                                <li><i class="fa fa-file-o"></i> app.module.ts : app main module 파일</li>
+                                <li><i class="fa fa-file-o"></i> app.routes.ts : app route(navigation) 파일</li>
+                                <li><i class="fa fa-file-o"></i> app.temaplte.html : app main template 파일</li>
+
+                            </ul>
+                        </li>
+
+                        <li><i class="fa fa-folder-open"></i> assets : 뷰레이어 Asset 디렉토리(CSS, Images, Font 등을 포함)
+                            <ul>
+                                <li><i class="fa fa-folder-open"></i> styles : Cascading Style Sheet 디렉토리
+                                    <ul>
+                                        <li><i class="fa fa-folder-open"></i> import : scss 파일 디렉토리</li>
+                                        <li><i class="fa fa-folder-open"></i> patterns : framework 기본 레이아웃 구성을 위한 이미지 디렉토리</li>
+                                    </ul>
+                                </li>
+                                <li><i class="fa fa-folder-open"></i> images : Image 디렉토리
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><i class="fa fa-file-o"></i> frontier.ts : frontier 어플리케이션 최상위 모듈 스크립트 파일</li>
+                        <li><i class="fa fa-file-o"></i> vendor.ts : frontier에서 사용되는 공용 오픈소스 프레임워크 및 라이브러리 선언 파일</li>
+                    </ul>
+                </li>
+                <li><i class="fa fa-folder-open"></i> vendor : npm으로 관리되지 않은 오픈소스 저장 디렉토리</li>
+                <li><i class="fa fa-file-o"></i> index.html : frontier 어플리케이션 개발모드 welcome 파일</li>
+                <li><i class="fa fa-file-o"></i> package.json : 뷰레이어 빌더 리소스 관리 파일</li>
+                <li><i class="fa fa-file-o"></i> tsconfig.json : typescript 설정 파일</li>
+                <li><i class="fa fa-file-o"></i> tslint.json : javascript 정적 테스트 설정 파일</li>
+                <li><i class="fa fa-file-o"></i> webpack.config.json : frontier 어플리케이션 번들 설정 파일</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

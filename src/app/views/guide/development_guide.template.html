@@ -1,0 +1,218 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Development Guide</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a>Guide</a>
+      </li>
+      <li class="active">
+        <strong>Development Guide</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+
+  <div class="col-lg-12 page-desc">
+    <h5>
+        본 가이드는 Frontier의 웹시스템 View Layer 개발에 대한 가이드로, 분석/설계자, 개발자, 아키텍트는 View Layer 개발시 본 가이드를 참조하여 개발표준을 준수한다.
+    </h5>
+      <small>언어별 표준 가이드는 "HTML코딩스타일, CSS코딩스타일, JavaScript코딩스타일" 메뉴를 참고한다.</small>
+  </div>
+
+</div>
+
+<div class="wrapper wrapper-content animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>문서타입(DocType)</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+            HTML의 문서표준은 최신의 HTML5 기술을 사용한 Single Page Application개발을 위해,
+            XHTML 대신, HTML5 문서타입(<i class="fa fa-info-circle"></i>
+            <a href="http://www.w3schools.com/html/html5_intro.asp" target="_blank">HTML5안내</a>)을 사용한다.
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>명명규칙</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>명명규칙은 하기의 내용을 준수하며, 명시되지 않은 부분은 코딩스타일가이드(HTMl, CSS, JavaScript 메뉴 참조)의 명명규칙을 기준으로 한다.
+                        단, 코딩스타일가이드에 명시되지 않은 내용은 프로젝트내의 명명규칙 일관성을 해치지 않는 한도내에서 가독성을 고려하여 작성한다.</p>
+                    <ul>
+                        <li>웹리소스의 파일명은 소문자와 숫자를 이용하여 작성하며, 확장자(html, css, js 등)를 가지고, 의미 구분이 필요한 경우 밑줄(_)을 사용한다.
+                            (단, JSP(jspf) 파일명의 경우 소문자로 시작하고, 대문자를 허용하는 카멜 표기법(Camel Casing Notation)을 따른다.)</li>
+                        <li>디렉토리명은 소문자를 이용하여 작성하며, 의미 구분이 필요한 경우 밑줄(_)을 사용한다.</li>
+                        <li>HTML(태그, 속성, 속성값)과 CSS(선택자, 요소, 요소값)의 모든 코드는 소문자로 작성한다. 단, text/CDATA와 대소문자가 유의미한 문자열값은 제외한다.</li>
+                        <li>HTML의 Name 속성은 Back-end의 데이터 처리를 위해 카멜 표기법(Camel Casing Notation)을 따른다.</li>
+                        <li>HTML의 ID 속성은 카멜 표기법(Camel Casing Notation)을 따른다.</li>
+                        <li>HTML과 CSS에서 Class 이름이 복수의 단어로 구성될 경우, 구분자로 하이픈(-)을 사용한다.</li>
+                        <li>HTML과 CSS의 클래스 속성명은 다음과 같은 접두어와 하이픈(-)을 사용하여 구분한다.</li>
+                        <li>JavaScript 코드는 카멜 표기법(Camel Casing Notation)을 따르며 클래스의 경우 대문자로, 함수/변수/메소드 등은 소문자로 시작한다.</li>
+                        <li>Angular에서 선언되는 Controller, Service, Filter, Directive의 명칭은 인스턴스로 사용되므로 소문자로 시작한다.</li>
+                        <li>값 설정시 HTML은 쌍따옴표(")를, CSS와 JavaScript는 따옴표(')를 사용한다.(단, CSS의 경우 예외 존재)</li>
+                        <li>모든 명명은 알 수 없는 약어를 사용하지 않으며, 단어 전체를 정확히 명시한다.
+                            (단, 업무적으로 빈번히 사용되는 긴 명명의 경우, 용어사전에 등록한 축약된 명명을 사용하며, 누구나 알 수 있는 보편적인 약어는 사용해도 무관한다.)</li>
+                    </ul>
+                    <p>Operation(Front/Backend) 명명규칙은 "수행(동사) + 업무(목적어)" 형식으로 작성하며, 아래의 내용을 따른다.</p>
+                    <ul>
+                        <li>수행 동사는 아래의 규칙대로 작성한다.
+                            <ul>
+                                <li>기본은 DataBase의 Create, Read, Update, Delete 수행의 분류에 따라 동사의 종류를 한정한다.</li>
+                                <li>Create 작업은 "create" 동사를 사용한다.</li>
+                                <li>Read 작업은 "get" 동사를 사용한다.</li>
+                                <li>Update 작업은 "update" 동사를 사용한다.</li>
+                                <li>Delete 작업은 "delete" 동사를 사용한다.</li>
+                                <li>Create, Update 작업이 동시에 수행되는 경우는 "save" 동사를 사용한다.</li>
+                                <li>Create, Update 작업(각각 또는 함께)이 Delete 작업과 동시에 수행되는 경우는 "process" 동사를 사용한다.</li>
+                                <li>Read 작업이 Create, Update, Delete 작업과 함께 수행되는 경우 Create, Update, Delete 작업의 명명 규칙을 따른다.</li>
+                                <li>공통으로 사용되는 수행 동사는 아래의 규칙을 따르며, 하기에 존재하지 않는 경우 수행 내용에 적합한 단어를 사용하며, 동일한 수행 내용은 동일 단어를 일관되게 적용한다.
+                                    <ul>
+                                        <li>초기화 : "initialize"</li>
+                                        <li>검색 : "search"</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>업무 목적어는 아래의 규칙대로 작성한다.
+                            <ul>
+                                <li>업무 목적어는 해당 업무명 약어가 아닌, 전체 단어를 사용하며, 두개 이상의 단어를 합쳐서 사용하는 것도 가능하다.</li>
+                                <li>업무 목적어는 첫글자를 대문자로, 나머진 소문자로 작성하는 카멜 표기법(Camel Casing Notation)을 따른다.</li>
+                                <li>복수의 업무 목적어는 "List" 접미사를 붙인다.</li>
+                                <li>모든 명명은 알 수 없는 약어를 사용하지 않으며, 단어 전체를 정확히 명시한다.
+                                    (단, 업무적으로 빈번히 사용되는 긴 명명의 경우, 용어사전에 등록한 축약된 명명을 사용하며, 누구나 알 수 있는 보편적인 약어는 사용해도 무관한다.)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>웹 리소스(Component/Font/Image 등) 작성 규칙</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>웹 리소스는 효율적인 개발 및 향후 유지보수를 위해 <i class="fa fa-info-circle"></i> <a href="https://www.npmjs.com/" target="_blank">npm</a> 통해 관리되며, 웹 리소스 작성시 하기의 규칙을 반드시 준수하여 개발한다.</p>
+                    <ol>
+                        <li>모든 웹 리소스는 npm을 통해 관리하며, 해당 Component는 package.json에 명시한다.</li>
+                        <li>npm에서 찾을 수 없는 리소스의 경우, 검증되지 않은 OSS일 가능성이 높기 때문에 사용을 지양한다.</li>
+                        <li>npm에서 찾을 수 없는 리소스지만, 검증됐고 반드시 사용이 필요한 경우 담당자에게 요청하며, 담당자는 해당 리소스를 직접 bower_components 폴더에 추가한다.
+                            (별도의 Font, Image, Style의 경우, client하위의 각 경로에 생성한다.)</li>
+                        <li>아이콘의 사용은 지양하며, Font 아이콘을 사용한다.</li>
+                        <li>운영환경 배포시, 해당 리소스는 <i class="fa fa-info-circle"></i> <a href="https://webpack.github.io/" target="_blank">Webpack</a>를 사용하여 하나의 파일로 관리하며,
+                            빌드 스크립트는 webpack.config.js에 작성한다.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>관심사의 분리 규칙</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>화면 개발시 구조, 디자인, 동작과 관련된 코드를 하나의 파일안에 작성하는 것이 아니라, 별개의 파일로 구분하여 개발한다.</p>
+                    <ol>
+                        <li>화면 코드에 HTML, CSS, JavaScript 파일을 함께 개발하지 않는다. HTML, CSS, JavaScript는 별도의 파일로 작성한다.</li>
+                        <li>디렉토리는 Backend와 동일한 디렉토리 구조(업무코드/상세업무명/.../상세업무명)로 작성하며, 파일명은 업무와 관련된 파일명을 사용한다.</li>
+                        <li>HTML 엘리먼트에 작성되는, 인라인 코드(CSS, JavaScript)는 지양한다.</li>
+                        <li>HTML 파일은 Angular Template으로 사용된다.</li>
+                        <li>JavaScript는 MVC 레이어에 맞도록 작성하며, Angular의 모듈작성 규칙을 따른다. 보다 자세한 내용은 JavaScript 코딩스타일 메뉴를 참조한다.</li>
+                        <li>CSS는 <i class="fa fa-info-circle"></i> <a href="http://sass-lang.com/" target="_blank">scss</a>를 통해 작성하며, 개발시 간단한 스타일 작성은 개발자 도구를 활용하여 확인 후, scss에 적용한다.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>표준 프레임웍크</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>표준 프레임워크는 OSS기반으로 작성되며, 이를 이용하여 크로스브라우징과 멀티플랫폼을 지원하는 코드를 작성한다.</p>
+                    <ul>
+                        <li>UI Framework : <i class="fa fa-info-circle"></i> <a href="https://angular.io/" target="_blank">Angular 4</a></li>
+                        <li>JavaScript Library : <i class="fa fa-info-circle"></i> <a href="http://jquery.com/" target="_blank">JQuery 3.2.X+</a></li>
+                        <li>CSS Framework : <i class="fa fa-info-circle"></i> <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3.3.X+</a></li>
+                        <li>CSS PreProcessor : <i class="fa fa-info-circle"></i> <a href="http://sass-lang.com/guide" target="_blank">scss loader 6.0.X+</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>서버(Back-end)와의 통신</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>Frontier는 SPA(<i class="fa fa-info-circle"></i> <a href="http://en.wikipedia.org/wiki/Single-page_application" target="_blank">Single Page Application</a>)을 지향하기 때문에,
+                        서버(Back-end)와의 통신은 다음의 규칙을 준수한다.</p>
+                    <ul>
+                        <li>서버(Back-end)와의 통신 방법은 AJAX(Asynchronous JavaScript and XML)를 권장한다.</li>
+                        <li>AJAX 구현시 반드시 Angular의 @angular/http 내장 서비스를 사용한다.</li>
+                        <li>클라이언트 템플릿은 Angular의 내장 템플릿을 이용한다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>화면 및 컴포넌트 템플릿</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <p>화면 개발 시, 제공하는 템플릿 코드를 참조하여 수정하는 방식으로 개발을 진행한다.
+                        UI 컴포넌트도 제공되는 검증된 컴포넌트(코드분석 메뉴 참조)만 사용하며, 추가가 필요한 경우 담당자에게 요청한다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>지원 브라우저 및 버전</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <ul>
+                        <li>Explorer 11+</li>
+                        <li>Latest Chrome</li>
+                        <li>Latest Firefox</li>
+                        <li>Latest Opera</li>
+                        <li>Latest Safari</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

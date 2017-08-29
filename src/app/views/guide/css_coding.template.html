@@ -1,0 +1,363 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Html Coding</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a>Guide</a>
+      </li>
+      <li class="active">
+        <strong>Css Coding Style</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+
+  <div class="col-lg-12 page-desc">
+    <h5>
+        본 가이드는 코드의 품질, 생산성 향상 및 향후 유지보수를 위해 CSS의 포맷과 코딩 스타일에 대해서 정의한다.
+    </h5>
+      <small>본 가이드는 <i class="fa fa-info-circle"></i> <a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">구글 코드의 스타일 가이드</a>를 참고하여 작성한다.</small>
+  </div>
+
+</div>
+
+<div class="wrapper wrapper-content animated fadeIn">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>일반적인 스타일 규칙</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+            <i class="fa fa-check-square"></i> 리소스
+            <p>CSS를 통해 삽입(링크)되는 리소스는 프로토콜을 제한하며, 웹서버 상의 논리적인 절대경로를 사용한다.</p>
+
+            <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+<pre class="prettyprint lang-css">
+    .example {{ '{' }}
+     background: url(http://www.sgs.com/img/example);
+    {{ '}' }}</pre>
+
+            <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    .example {{ '{' }}
+        background: url(/img/example);
+    }</pre>
+
+            <i class="fa fa-check-square"></i> 명명규칙
+            <p>명명규칙은 다음을 따른다.</p>
+            <ul>
+                <li>파일명은 소문자와 숫자를 이용하여 작성하며 확장자(css)를 가지고, 의미 구분이 필요한 경우 밑줄(_)을 사용한다.</li>
+                <li>디렉토리명은 소문자를 이용하여 작성하며, 의미 구분이 필요한 경우 밑줄(_)을 사용한다.</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>일반적인 포맷 규칙</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+            <i class="fa fa-check-square"></i> 들여쓰기
+            <p>들어쓰기 기준은 4 spaces 이며, 탭과 혼용하여 사용하지 않는다.<small>(1 tab은 4 spaces로 자동 변환한다.)</small></p>
+            <i class="fa fa-check-square"></i> 대소문자
+            <p>모든 코드는 소문자로 작성한다. 단, text/CDATA와 대소문자가 유의미한 문자열은 제외한다.<small>(HTML[태그, 속성, 속성값])</small></p>
+            <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+            <pre class="prettyprint lang-css">  color: #E5E5E5;</pre>
+            <button type="button" class="btn btn-success btn-xs">Recommend</button>
+            <pre class="prettyprint lang-css">  color: #e5e5e5;</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>일반적인 메타 규칙</h5>
+                    <iboxtools></iboxtools>
+                </div>
+                <div class="ibox-content">
+                    <i class="fa fa-check-square"></i> 인코딩
+                    <p>UTF-8(no BOM)을 사용한다.<small>(CSS:별도로 지정하지 않음[기본 utf-8])</small></p>
+                    <i class="fa fa-check-square"></i> 주석
+                    <p>업무적인 설명이 필요한 곳에 주석을 작성한다. 단, 사람이 이해할 수 있는 명명규칙을 권고하며 주석은 최소화 한다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>CSS 스타일 규칙</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+            <i class="fa fa-check-square"></i> CSS 유효성 검증
+            <p>코드의 품질을 보장하기 위해 <i class="fa fa-info-circle"></i> <a href="http://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS validator</a>를 통해 검증된 코드를 사용한다.</p>
+            <i class="fa fa-check-square"></i> ID와 Class 명명
+            <p>단순히 표현적인 이름이 아닌, 엘리먼트의 목적을 반영하는 의미있는 이름이나 누구나 이해할 수 있는 보편적인 이름을 사용한다.</p>
+
+            <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+<pre class="prettyprint lang-css">
+    /* 의미없는 이름 */
+    #yee-1901 {{ '{' }}{{ '}' }}
+
+    /* 표현적인 이름 */
+    .button-green {{ '{' }}{{ '}' }}
+    .clear {{ '{' }}{{ '}' }}</pre>
+            <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    /* 유의미한 이름 */
+    #gallery {{ '{' }}{{ '}' }}
+    #login {{ '{' }}{{ '}' }}
+    .video {{ '{' }}{{ '}' }}
+
+    /* 보편적인 이름 */
+    .aux {{ '{' }}{{ '}' }}
+    .alt {{ '{' }}{{ '}' }}</pre>
+
+            <i class="fa fa-check-square"></i> 타입 선택자
+            <p>성능 향상을 위해서, 제한된 ID와 class는 타입 선택자와 함께 사용하지 않는다.
+                <small><i class="fa fa-info-circle"></i> <a href="http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/" target="_blank">성능이슈</a></small></p>
+
+            <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+<pre class="prettyprint lang-css">
+    ul#example {{ '{' }}{{ '}' }}
+    div.error {{ '{' }}{{ '}' }}</pre>
+
+            <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    #example {{ '{' }}{{ '}' }}
+    .error {{ '{' }}{{ '}' }}</pre>
+
+            <i class="fa fa-check-square"></i> 축약 요소(property)
+            <p>코드의 가독성과 효율적인 코드관리를 위해 가급적 축약 요소을 사용한다.</p>
+
+            <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+<pre class="prettyprint lang-css">
+    border-top-style: none;
+    border-top-width: 1em;
+    font-family: palatino, georgia, serif;
+    font-size: 100%;
+    line-height: 1.6;
+    padding-bottom: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0;</pre>
+
+            <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    border-top: 1em none;
+    font: 100%/1.6 palatino, georgia, serif;
+    padding: 0 1em 2em;</pre>
+
+            <i class="fa fa-check-square"></i> z-index 속성
+            <p>z-index 속성값은 최소 10, 최대 9990이며, 10단위로 증감한다.</p>
+            <i class="fa fa-check-square"></i> 0과 단위
+            <p>0값 뒤의 단위는 생략한다.</p>
+
+            <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    margin: 0;
+    padding: 0;</pre>
+
+            <i class="fa fa-check-square"></i> 앞에 위치하는 0
+            <p>값의 앞에 위치한 0은 생략한다.</p>
+
+            <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    font-size: .8em;</pre>
+
+            <i class="fa fa-check-square"></i> 16진수 표시
+            <p>가능할 경우, 3자리로 표시한다. 단, 불가할 경우 6자리로 표시한다.</p>
+
+            <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+<pre class="prettyprint lang-css">
+    color: #eebbcc;</pre>
+
+            <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    color: #ebc;</pre>
+            <i class="fa fa-check-square"></i> 접두어
+            <p>업무에만 특화된 CSS일 경우, 특정업무에 적합한 접두어를 선택자 이름으로 사용한다.</p>
+
+            <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    .adw-help {{ '{' }}{{ '}' }} /* AdWords */
+    #maia-note {{ '{' }}{{ '}' }} /* Maia */</pre>
+            <i class="fa fa-check-square"></i> ID와 Class 이름 구분자
+            <p>Class 이름이 복수의 단어로 구성될 경우, 구분자로 하이픈(-)을 사용한다.</p>
+
+            <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+<pre class="prettyprint lang-css">
+    .demoimage {{ '{' }}{{ '}' }}
+    .errorStatus {{ '{' }}{{ '}' }}</pre>
+
+            <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    #video-id {{ '{' }}{{ '}' }}
+    .ads-sample {{ '{' }}{{ '}' }}</pre>
+
+            <i class="fa fa-check-square"></i> CSS Hack
+            <p>코드의 관리를 위해서 CSS Hack 코드는 피하는 것을 권장하며, 다른 방법을 먼저 고려한다.</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-lg-6">
+          <div class="ibox float-e-margins">
+              <div class="ibox-title">
+                  <h5>CSS 포맷 규칙</h5>
+                  <iboxtools></iboxtools>
+              </div>
+              <div class="ibox-content">
+                  <i class="fa fa-check-square"></i> 요소 선언 순서
+                  <p>향후 관리를 위해서, 알파벳 순서로 선언한다. 이때, -벤더- 접두어는 순서에서 고려하지 않는다.</p>
+
+                  <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    background: fuchsia;
+    border: 1px solid;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    color: black;
+    text-align: center;
+    text-indent: 2em;</pre>
+
+                  <i class="fa fa-check-square"></i> 블럭 내용 들여쓰기
+                  <p>가독성 향상을 위해, 블럭내의 모든 코드는 들여쓰기 한다.</p>
+
+                  <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    @media screen, projection {{ '{' }}
+
+      html {{ '{' }}
+        background: #fff;
+        color: #444;
+      }
+
+    }</pre>
+
+                  <i class="fa fa-check-square"></i> 선언문 마무리
+                  <p>일관적인 코드 작성을 위해, 모든 선언문은 세미콜론(;)으로 종료한다.</p>
+
+                  <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+<pre class="prettyprint lang-css">
+    .test {{ '{' }}
+      display: block;
+      height: 100px
+    {{ '}' }}</pre>
+
+                  <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    .test {{ '{' }}
+      display: block;
+      height: 100px;
+    {{ '}' }}</pre>
+
+                  <i class="fa fa-check-square"></i> 요소(property) 구문
+                  <p>요소명 작성후 바로 콜론(:)을 붙이고, 콜론과 요소값 사이에 공백 한칸을 두어 구분한다.</p>
+
+                  <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+<pre class="prettyprint lang-css">
+    h3 {{ '{' }}
+      font-weight:bold;
+    {{ '}' }}</pre>
+                  <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    h3 {{ '{' }}
+      font-weight: bold;
+    {{ '}' }}</pre>
+
+                  <i class="fa fa-check-square"></i> 선언문 블럭
+                  <p>선택자와 선언문 블럭 사이에 공백 한칸을 두어 구분한다.</p>
+
+                  <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+<pre class="prettyprint lang-css">
+    /* 공백없음 */
+    #video{{ '{' }}
+      margin-top: 1em;
+    {{ '}' }}
+
+    /* 불필요한 줄바꿈 */
+    #video
+    {{ '{' }}
+      margin-top: 1em;
+    {{ '}' }}</pre>
+                  <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    #video {{ '{' }}
+      margin-top: 1em;
+    {{ '}' }}</pre>
+
+                  <i class="fa fa-check-square"></i> 복수의 선택자와 선언구문
+                  <p>복수의 선택자와 선언문 블럭은 줄바꿈을 통해 구분한다.</p>
+
+                  <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+<pre class="prettyprint lang-css">
+    a:focus, a:active {{ '{' }}
+      position: relative; top: 1px;
+    {{ '}' }}</pre>
+
+
+                  <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    h1,
+    h2,
+    h3 {{ '{' }}
+      font-weight: normal;
+      line-height: 1.2;
+    {{ '}' }}</pre>
+
+                  <i class="fa fa-check-square"></i> 선언문 블럭 구분
+                  <p>선언문 블럭 사이에 비어있는 한줄을 두어 구분한다.</p>
+
+                  <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    html {{ '{' }}
+      background: #fff;
+    {{ '}' }}
+
+    body {{ '{' }}
+      margin: auto;
+      width: 50%;
+    {{ '}' }}</pre>
+
+                  <i class="fa fa-check-square"></i> CSS 따옴표
+                  <p>엘리먼트 속성(attribute) 선택자와 CSS 요소(property)값을 설정할 때, 따옴표('')를 사용한다.
+                      단, URI() 함수의 값은 따옴표를 사용하지 않으며, @charset은 쌍따옴표("")를 사용한다.</p>
+
+                  <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+<pre class="prettyprint lang-css">
+    @import url("//www.google.com/css/maia.css");
+
+    html {{ '{' }}
+      font-family: "open sans", arial, sans-serif;
+    {{ '}' }}</pre>
+
+                  <button type="button" class="btn btn-success btn-xs">Recommend</button>
+<pre class="prettyprint lang-css">
+    @import url(/css/maia.css);
+
+    html {{ '{' }}
+      font-family: 'open sans', arial, sans-serif;
+    {{ '}' }}</pre>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

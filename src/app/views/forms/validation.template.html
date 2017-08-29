@@ -1,0 +1,168 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Validation</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a>Forms</a>
+      </li>
+      <li class="active">
+        <strong>Validation</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Validation</h5>
+        </div>
+        <div class="ibox-content">
+          <p>
+            Validation은 크게 다음의 순서로 작성한다.
+          </p>
+          <ol>
+            <li>입력 값에 특정 포맷이 존재할 경우, angular2-text-mask를 이용하여 포맷을 지정한다.</li>
+            <li>angular 기본 validation(required, maxlength, min-length, number, email, url, pattern)을 적용한다.</li>
+            <li>1, 2번으로 해결되지 않을 경우, 해당 이벤트 핸들러를 controller에서 작성하여 처리한다.</li>
+            <li>모든 validation 결과는 경고창(window.alert)을 사용할 수 없다.</li>
+          </ol>
+          <dl>
+            <dt>angular2-text-mask</dt>
+            <dd>- version : ~8.0.3</dd>
+            <dd>
+              - url : <a href="https://github.com/text-mask/text-mask/tree/master/angular2" target="_blank">https://github.com/text-mask/text-mask/tree/master/angular2</a>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Mask validation</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+          <p>
+            Input masks allows a user to more easily enter data where you would like them to enter the data in a certain format.
+          </p>
+
+          <form [formGroup] = "validationForm" class="form-horizontal m-t-md" (ngSubmit)="onSubmit()" novalidate>
+
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">Phone</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="validation1" [textMask]="{mask: phoneMask}" placeholder="" [(ngModel)]="dataInput1">
+                <span class="help-block">(123)111-2345</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Phone with Country</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="validation2" [textMask]="{mask: phoneMaskWithCountryCode}" placeholder="" [(ngModel)]="dataInput2">
+                <span class="help-block">+1 (111) 212-1122</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Date</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="validation3" [textMask]="{mask: dateMaks}" placeholder="" [(ngModel)]="dataInput3">
+                <span class="help-block">31/12/2017</span>
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">currency</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="validation4" [textMask]="{mask: usDollarMask}" placeholder="" [(ngModel)]="dataInput4">
+                <span class="help-block">$12,112,200</span>
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">email</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="validation5" [textMask]="{mask: emailMask}" placeholder="" [(ngModel)]="dataInput5">
+                <span class="help-block">abc@11st.com</span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Angular Validation</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+
+          <form [formGroup]="formModel" class="form-horizontal m-t-md" (ngSubmit)="onSubmit1()" novalidate>
+            <div class="form-group" [class.has-error]="formModel.hasError('required', 'username')">
+              <label class="col-sm-2 col-sm-2 control-label">Username</label>
+              <div class="col-sm-10">
+                <input id="username" type="text" class="form-control" formControlName="username" required>
+                <span class="help-block" [class.hidden]="!formModel.hasError('required', 'username')">Username is required</span>
+              </div>
+            </div>
+
+            <div class="form-group" [class.has-error]="formModel.hasError('ssn', 'ssn')">
+              <label class="col-sm-2 col-sm-2 control-label">SSN</label>
+              <div class="col-sm-10">
+                <input id="ssn" type="text" class="form-control" formControlName="ssn">
+                <span class="help-block" [class.hidden]="!formModel.hasError('ssn', 'ssn')">SSN is invalid</span>
+              </div>
+            </div>
+
+            <div formGroupName="passwordsGroup">
+              <div class="form-group" [class.has-error]="formModel.hasError('minlength', ['passwordsGroup', 'password'])">
+                <label class="col-sm-2 col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                  <input id="password" type="password" class="form-control" formControlName="password">
+                  <span class="help-block" [class.hidden]="!formModel.hasError('minlength', ['passwordsGroup', 'password'])">Password is too short</span>
+                </div>
+              </div>
+
+              <div class="form-group" [class.has-error]="formModel.hasError('equal', 'passwordsGroup')">
+                <label class="col-sm-2 col-sm-2 control-label">Confirm password</label>
+                <div class="col-sm-10">
+                  <input id="pconfirm" type="password" class="form-control" formControlName="pconfirm">
+                  <span class="help-block" [class.hidden]="!formModel.hasError('equal', 'passwordsGroup')">Passwords must be the same</span>
+                </div>
+              </div>
+
+              <!--<div class="form-group radio">
+                <h4>Super power:</h4>
+                <label class="center-block"><input type="radio" formControlName="power" value="flight">Flight</label>
+                <label class="center-block"><input type="radio" formControlName="power" value="x-ray vision">X-ray vision</label>
+                <label class="center-block"><input type="radio" formControlName="power" value="strength">Strength</label>
+              </div>-->
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

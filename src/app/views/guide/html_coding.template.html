@@ -1,0 +1,251 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Html Coding</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a>Guide</a>
+      </li>
+      <li class="active">
+        <strong>Html Coding Style</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+
+  <div class="col-lg-12 page-desc">
+    <h5>
+      본 가이드는 코드의 품질, 생산성 향상 및 향후 유지보수를 위해 HTM의 포맷과 코딩 스타일에 대해서 정의한다.
+    </h5>
+    <small>본 가이드는 <i class="fa fa-info-circle"></i> <a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">구글 코드의 스타일 가이드</a>를 참고하여 작성한다.</small>
+  </div>
+
+</div>
+
+<div class="wrapper wrapper-content animated fadeIn">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>일반적인 스타일 규칙</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+          <i class="fa fa-check-square"></i> 리소스
+          <p>HTML을 통해 삽입(링크)되는 리소스는 프로토콜을 제한하며, 웹서버 상의 논리적인 절대경로를 사용한다.</p>
+
+          <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+          <pre class="prettyprint lang-html"> &lt;script src="http://www.google.com/js/autotrack.js"&gt;&lt;/script&gt;</pre>
+
+          <button type="button" class="btn btn-success btn-xs">Recommend</button>
+          <pre class="prettyprint lang-html"> &lt;script src="/js/autotrack.js"&gt;&lt;/script&gt;</pre>
+
+          <i class="fa fa-check-square"></i> 명명규칙
+          <p>명명규칙은 다음을 따른다.</p>
+          <ul>
+            <li>파일명은 소문자와 숫자를 이용하여 작성하며 확장자(html)를 가지고, 의미 구분이 필요한 경우 밑줄(_)을 사용한다.</li>
+            <li>디렉토리명은 소문자를 이용하여 작성하며, 의미 구분이 필요한 경우 밑줄(_)을 사용한다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>일반적인 포맷 규칙</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+          <i class="fa fa-check-square"></i> 들여쓰기
+          <p>들어쓰기 기준은 4 spaces 이며, 탭과 혼용하여 사용하지 않는다.<small>(1 tab은 4 spaces로 자동 변환한다.)</small></p>
+          <i class="fa fa-check-square"></i> 대소문자
+          <p>모든 코드는 소문자로 작성한다. 단, text/CDATA와 대소문자가 유의미한 문자열은 제외한다.<small>(HTML[태그, 속성, 속성값])</small></p>
+          <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+          <pre class="prettyprint lang-html"> &lt;A HREF="/"&gt;Home&lt;/A&gt;</pre>
+          <button type="button" class="btn btn-success btn-xs">Recommend</button>
+          <pre class="prettyprint lang-html"> &lt;img src="google.png" alt="Google"&gt;</pre>
+          <i class="fa fa-check-square"></i> 불필요 공백 지우기
+          <p>라인 뒤에 붙는 불필요한 공백은 모두 제거한다.</p>
+
+          <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+          <pre class="prettyprint lang-html"> &lt;p&gt;What?         &lt;/p&gt;</pre>
+          <button type="button" class="btn btn-success btn-xs">Recommend</button>
+          <pre class="prettyprint lang-html"> &lt;p&gt;Yes please&lt;/p&gt;</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>HTML 스타일 규칙</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+          <i class="fa fa-check-square"></i> 문서타입(DocType)
+          <p>XHTML을 대신, HTML5 문서타입을 사용한다.<small>(내용이 없는 엘리먼트를 닫는 코드는 작성하지 않는다.)</small></p>
+
+          <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+          <pre class="prettyprint lang-html"> &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+  &lt;br/&gt;</pre>
+          <button type="button" class="btn btn-success btn-xs">Recommend</button>
+          <pre class="prettyprint lang-html"> &lt;!DOCTYPE html&gt;
+  &lt;br&gt;</pre>
+
+          <i class="fa fa-check-square"></i> HTML 유효성 검증
+          <p>코드의 품질을 보장하기 위해 <i class="fa fa-info-circle"></i> <a href="http://validator.w3.org/" target="_blank">W3C HTML validator</a>를 통해 검증된 코드를 사용한다.</p>
+          <i class="fa fa-check-square"></i> 의미에 맞는 엘리먼트 사용(Semantic element)
+          <p>효율적인 코드와 접근성, 재사용성을 위해서 HTML 엘리먼트가 가진 본연의 의미에 맞는 태그를 사용한다. <small>(레이아웃을 위해 table 대신 div, span를 사용한다.)</small></p>
+
+          <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+          <pre class="prettyprint lang-html"> &lt;div onclick="goToRecommendations();"&gt;All recommendations&lt;/div&gt;</pre>
+
+          <button type="button" class="btn btn-success btn-xs">Recommend</button>
+          <pre class="prettyprint lang-html"> &lt;a href="recommendations/"&gt;All recommendations&lt;/a&gt;</pre>
+
+          <i class="fa fa-check-square"></i> 멀티미디어 대비
+          <p>접근성을 위해서 멀티미디어(이미지, 비디오 등) 리소스에 대한 대안을 제공한다.</p>
+
+          <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+          <pre class="prettyprint lang-html"> &lt;img src="spreadsheet.png"&gt;</pre>
+
+
+          <button type="button" class="btn btn-success btn-xs">Recommend</button>
+          <pre class="prettyprint lang-html"> &lt;img src="spreadsheet.png" alt="Spreadsheet screenshot."&gt;</pre>
+
+          <i class="fa fa-check-square"></i> 관심사의 분리
+          <p>HTML은 동작이나 디자인 코드가 아닌, 컨텐츠 구조만을 작성한다.<small>(디자인:CSS, 동작:JavaScript)</small></p>
+
+          <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+          <pre class="prettyprint lang-html">
+  &lt;!DOCTYPE html&gt;
+    &lt;title&gt;HTML sucks&lt;/title&gt;
+    &lt;link rel="stylesheet" href="base.css" media="screen"&gt;
+    &lt;link rel="stylesheet" href="grid.css" media="screen"&gt;
+    &lt;link rel="stylesheet" href="print.css" media="print"&gt;
+    &lt;h1 style="font-size: 1em;"&gt;HTML sucks&lt;/h1&gt;
+    &lt;p&gt;I’ve read about this on a few sites but now I’m sure:
+      &lt;u&gt;HTML is stupid!!&lt;/u&gt;
+    &lt;/p&gt;
+    &lt;center&gt;I can’t believe there’s no way to control the styling of
+    my website without doing everything all over again!&lt;/center&gt;
+</pre>
+
+          <button type="button" class="btn btn-success btn-xs">Recommend</button>
+          <pre class="prettyprint lang-html">
+  &lt;!DOCTYPE html&gt;
+    &lt;title&gt;My first CSS-only redesign&lt;/title&gt;
+    &lt;link rel="stylesheet" href="default.css"&gt;
+    &lt;h1&gt;My first CSS-only redesign&lt;/h1&gt;
+    &lt;p&gt;I’ve read about this on a few sites but today I’m actually
+    doing it: separating concerns and avoiding anything in the HTML of
+    my website that is presentational.&lt;/p&gt;
+    &lt;p&gt;It’s awesome!&lt;/p&gt;
+</pre>
+
+          <i class="fa fa-check-square"></i> HTML 엔티티 코드
+          <p>HTML 엔티티코드는 사용하지 않는다. 단, &amp;lt;, &amp;amp;, &amp;nbsp;와 같이 HTML안에서 특별한 의미를 가진 코드는 예외로 한다.
+            <small>(<i class="fa fa-info-circle"></i> <a href="http://entitycode.com/" target="_blank">HTML EntityCode</a>)</small></p>
+
+          <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+          <pre class="prettyprint lang-html"> The currency symbol for the Euro is &amp;ldquo;&amp;euro;&amp;rdquo;.</pre>
+          <button type="button" class="btn btn-success btn-xs">Recommend</button>
+          <pre class="prettyprint lang-html"> The currency symbol for the Euro is “€”.</pre>
+
+          <i class="fa fa-check-square"></i> type 속성
+          <p>HTML5에서 CSS와 JavaScript 사용시 기본으로 설정되는, type 속성은 생략한다.
+            <small>(CSS기본type: text/css, JavaScript기본type: text/javascript)</small></p>
+
+          <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+          <pre class="prettyprint lang-html">
+  &lt;link rel="stylesheet" href="/css/maia.css" type="text/css"&gt;
+  &lt;script src="/js/gweb/analytics/autotrack.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
+
+          <button type="button" class="btn btn-success btn-xs">Recommend</button>
+          <pre class="prettyprint lang-html">
+  &lt;link rel="stylesheet" href="//www.google.com/css/maia.css"&gt;
+  &lt;script src="/js/gweb/analytics/autotrack.js"&gt;&lt;/script&gt;</pre>
+
+          <i class="fa fa-check-square"></i> ID, Class, Name 속성
+          <ul>
+            <li>ID와 Name은 Back-end의 데이터 처리를 위해 카멜 표기법(Camel Casing Notation)을 따른다.</li>
+            <li>Class는 소문자와 숫자로 작성하며, 이름이 복수의 단어로 구성될 경우, 구분자로 하이픈(-)을 사용한다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>HTML 포맷 규칙</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+          <i class="fa fa-check-square"></i> 일반적 포맷
+          <p>블럭 엘리먼트(block element), 리스트(li), 테이블(table)은 새로운 줄에 작성하며, 하위 엘리먼트는 들여쓰기를 한다.
+            <small>(인라인 엘리먼트(inline element)의 경우, 줄바꿈 없이 가독성있게 작성한다.)</small></p>
+
+          <button type="button" class="btn btn-success btn-xs">Recommend</button>
+          <pre class="prettyprint lang-html">
+  &lt;blockquote&gt;
+      &lt;p&gt;&lt;em&gt;Space&lt;/em&gt;, the final frontier.&lt;/p&gt;
+  &lt;/blockquote&gt;
+
+  &lt;ul&gt;
+      &lt;li&gt;Moe&lt;/li&gt;
+      &lt;li&gt;Larry&lt;/li&gt;
+      &lt;li&gt;Curly&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;table&gt;
+      &lt;thead&gt;
+          &lt;tr&gt;
+              &lt;th scope="col"&gt;Income&lt;/th&gt;
+              &lt;th scope="col"&gt;Taxes&lt;/th&gt;
+          &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+          &lt;tr&gt;
+              &lt;td&gt;$ 5.00&lt;/td&gt;
+              &lt;td&gt;$ 4.50&lt;/td&gt;
+          &lt;/tr&gt;
+      &lt;/tbody&gt;
+  &lt;/table&gt;</pre>
+
+          <i class="fa fa-check-square"></i> HTML 따옴표
+          <p>속성값을 설정할 때, 쌍따옴표("")를 사용한다.</p>
+
+          <button type="button" class="btn btn-danger btn-xs">Not recommend</button>
+          <pre class="prettyprint lang-html">
+  &lt;a class='maia-button maia-button-secondary'&gt;Sign in&lt;/a&gt;</pre>
+
+          <button type="button" class="btn btn-success btn-xs">Recommend</button>
+          <pre class="prettyprint lang-html">
+  &lt;a class="maia-button maia-button-secondary"&gt;Sign in&lt;/a&gt;</pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>일반적인 메타 규칙</h5>
+          <iboxtools></iboxtools>
+        </div>
+        <div class="ibox-content">
+          <i class="fa fa-check-square"></i> 인코딩
+          <p>UTF-8(no BOM)을 사용한다.<small>(HTML:&lt;meta charset="utf-8"&gt;)</small></p>
+          <i class="fa fa-check-square"></i> 주석
+          <p>업무적인 설명이 필요한 곳에 주석을 작성한다. 단, 사람이 이해할 수 있는 명명규칙을 권고하며 주석은 최소화 한다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
