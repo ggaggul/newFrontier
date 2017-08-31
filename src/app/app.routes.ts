@@ -25,8 +25,8 @@ import {ProductDetailComponent} from "./views/templates/product_detail/product_d
 import {AlertComponent} from "./views/interface/alert.component";
 import {NotificationsComponent} from "./views/interface/notifications.component";
 import {ModalComponent} from "./views/interface/modal.component";
-/*
 import {TreeComponent} from "./views/interface/tree.component";
+/*
 import {TypographyComponent} from "./views/interface/typography.component";
 import {ButtonsComponent} from "./views/interface/buttons.component";
 import {PanelsComponent} from "./views/interface/panels.component";
@@ -97,8 +97,8 @@ export const ROUTES:Routes = [
             {path: 'alert', component: AlertComponent},
             {path: 'notifications', component: NotificationsComponent},
             {path: 'modal', component: ModalComponent},
-            /*{path: 'tree', component: TreeComponent},
-            {path: 'typography', component: TypographyComponent},
+            {path: 'tree', component: TreeComponent},
+            /*{path: 'typography', component: TypographyComponent},
             {path: 'buttons', component: ButtonsComponent},
             {path: 'panels', component: PanelsComponent},
             {path: 'helper_css', component: HelperCssComponent}*/

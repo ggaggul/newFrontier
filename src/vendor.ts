@@ -27,6 +27,7 @@ import 'bootstrap-touchspin';
 import 'angular2-text-mask';
 import 'text-mask-addons';
 import 'sweetalert2';
+import 'angular-tree-component';
 
 // Core vendor styles
 import 'bootstrap/dist/css/bootstrap.min.css';
