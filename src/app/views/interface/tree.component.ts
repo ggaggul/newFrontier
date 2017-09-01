@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
 })
 
 export class TreeComponent{
+
+    treeEvent : string = '';
     nodes = [
         {
             id: 1,
@@ -32,5 +34,9 @@ export class TreeComponent{
     ];
 
     constructor() {
+    }
+
+    onEvent = ($event) => {
+        this.treeEvent += $event.eventName ?  " -> " + $event.eventName : "";
     }
 }

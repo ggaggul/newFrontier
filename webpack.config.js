@@ -43,7 +43,8 @@ const config = {
 			{ test : /\.ttf$/, loader : 'url-loader?limit=10000&mimetype=application/octet-stream' },
 			{ test : /\.svg$/, loader : 'url-loader?limit=10000&mimetype=image/svg+xml' },
 			{ test : /\.eot$/, loader : 'file-loader' },
-			{ test: /\.(gif|png|jpe?g)$/, loader : 'url-loader?name=images/[name].[ext]&mimeType=image/[ext]&limit=100000'}
+			{ test: /\.(gif|png|jp(e)g)$/, loaders : ['url-loader?name=src/assets/[name].[ext]&mimeType=image/[ext]&limit=100000']} //100kb
+			//{ test: /\.(png|jpg|gif|svg|ico)$/, loader: 'file-loader?name=src/assets/[name].[ext]'}
 		]
 	},
 	plugins : [
@@ -57,30 +58,14 @@ switch (metadata.MODE) {
 	case 'development':
 		config.module.loaders.push(
 
-			//main.ts(frontier.ts)���� require �Ǵ� import�� �����ϰ� ���� ���
-			/*{ test : /\.css$/, loader : 'style-loader!css-loader', exclude : /node_modules/ },*/
             { test : /\.scss$/, loader : 'style-loader!css-loader!sass-loader', exclude : /node_modules/ },
-
-            //�� component�� css�� loading�ؼ� styles ������Ƽ�ȿ� ��Ʈ������ ��ȯ�Ͽ� ����
-            //{ test : /\.css$/, loader : 'to-string-loader!css-loader', exclude : /node_modules/ },
-
             { test : /\.css$/, loader : 'style-loader!css-loader', exclude : /src/ },
-
 			{ test : /\.html$/, loader : 'raw-loader' },
 			{ test : /\.ts$/, loader : 'awesome-typescript-loader', query : { compilerOptions : { noEmit : false } } }
-
-
-			/*���忡�� css ����� ����Ұ�..
-			{ test : /\.scss/, loader : ExtractTextPlugin.extract({
-			 fallback: 'style-loader',
-			 use: ['css-loader', 'sass-loader']
-			 }), exclude : /node_modules/ },*/
-			/*{ test : /\.css$/, loader : 'style-loader!css-loader?', exclude : /src/ },*/
 		);
 
 		config.plugins.push(
-			new CommonsChunkPlugin({ name : 'vendor', filename : 'vendor.bundle.js', minChunks : Infinity })/*,
-			new ExtractTextPlugin({filename : 'frontier.css', disable: false, allChunks: true })*/
+			new CommonsChunkPlugin({ name : 'vendor', filename : 'vendor.bundle.js', minChunks : Infinity })
 		);
 
 		config.devServer = {
@@ -109,7 +94,13 @@ switch (metadata.MODE) {
 		config.plugins.push(
 			new CommonsChunkPlugin({ name : 'vendor', filename : 'vendor.bundle.js', minChunks : Infinity }),
 			new CompressionPlugin({ regExp : /\.css$|\.html$|\.js$|\.map$/ }),
-			new CopyWebpackPlugin([{ from : './index.html', to : 'index.html' }]),
+			new CopyWebpackPlugin([
+				{ from : './index.html', to : 'index.html' },
+                /*{
+                    from: 'src/assets/images',
+                    to: 'src/assets/images',
+                }*/
+			]),
 			new OccurrenceOrderPlugin(true),
 			new UglifyJsPlugin({
 				compress : { screw_ie8 : true },
