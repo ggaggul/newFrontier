@@ -78,6 +78,7 @@
     "sweetalert2": "^6.6.9",
     "text-mask-addons": "^3.6.0",
     "to-string-loader": "^1.1.5",
+    "tslint": "^5.7.0",
     "typescript": "^2.3.2",
     "url-loader": "^0.5.8",
     "webpack": "^2.7.0",

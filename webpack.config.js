@@ -39,11 +39,11 @@ const config = {
 	},
 	module : {
 		loaders : [
-			{ test : /\.(woff$|woff2)$/, loader : 'url-loader?limit=10000&mimetype=application/font-woff' },
-			{ test : /\.ttf$/, loader : 'url-loader?limit=10000&mimetype=application/octet-stream' },
-			{ test : /\.svg$/, loader : 'url-loader?limit=10000&mimetype=image/svg+xml' },
-			{ test : /\.eot$/, loader : 'file-loader' },
-			{ test: /\.(gif|png|jp(e)g)$/, loaders : ['url-loader?name=src/assets/[name].[ext]&mimeType=image/[ext]&limit=100000']} //100kb
+			{ test : /\.(woff$|woff2)$/, loader : 'url-loader?name=src/assets/fonts/[name].[ext]?[hash]&limit=10000&mimetype=application/font-woff' },
+			{ test : /\.ttf$/, loader : 'url-loader?name=src/assets/fonts/[name].[ext]&limit=10000&mimetype=application/octet-stream' },
+			{ test : /\.svg$/, loader : 'url-loader?name=src/assets/fonts/[name].[ext]&limit=10000&mimetype=image/svg+xml' },
+			{ test : /\.eot$/, loader : 'file-loader?name=src/assets/fonts/[name].[ext]' },
+			{ test: /\.(gif|png|jp(e)g)$/, loader : 'url-loader?name=src/assets/[name].[ext]&mimeType=image/[ext]&limit=100000'} //100kb
 			//{ test: /\.(png|jpg|gif|svg|ico)$/, loader: 'file-loader?name=src/assets/[name].[ext]'}
 		]
 	},
@@ -87,7 +87,16 @@ switch (metadata.MODE) {
 		config.module.loaders.push(
             { test : /\.scss$/, loader : 'style-loader!css-loader!sass-loader', exclude : /node_modules/ },
 			{ test : /\.css$/, loader : 'style-loader!css-loader', exclude : /src/ },
-			{ test : /\.html$/, loader : 'html-loader?caseSensitive=true' },
+			{
+				test : /\.html$/,
+				/*use : {
+					loader : 'html-loader',
+					options : {
+						interpolate :  'require'
+					}
+				}*/
+				loader : 'html-loader?caseSensitive=true'
+			},
 			{ test : /\.ts$/, loader : 'awesome-typescript-loader', query : { compilerOptions : { noEmit : false } } }
 		);
 
@@ -96,10 +105,9 @@ switch (metadata.MODE) {
 			new CompressionPlugin({ regExp : /\.css$|\.html$|\.js$|\.map$/ }),
 			new CopyWebpackPlugin([
 				{ from : './index.html', to : 'index.html' },
-                /*{
-                    from: 'src/assets/images',
+                { from: 'src/assets/images',
                     to: 'src/assets/images',
-                }*/
+                }
 			]),
 			new OccurrenceOrderPlugin(true),
 			new UglifyJsPlugin({
